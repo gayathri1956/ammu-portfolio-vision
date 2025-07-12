@@ -1,46 +1,80 @@
 
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { User, Briefcase, Code, Target, MessageSquare } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
   const currentPath = location.pathname;
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigationItems = [
-    { id: 'home', label: 'Home', icon: User, path: '/' },
-    { id: 'about', label: 'About', icon: User, path: '/about' },
-    { id: 'portfolio', label: 'Portfolio', icon: Briefcase, path: '/portfolio' },
-    { id: 'skills', label: 'Skills', icon: Code, path: '/skills' },
-    { id: 'services', label: 'Services', icon: Target, path: '/services' },
-    { id: 'contact', label: 'Contact', icon: MessageSquare, path: '/contact' }
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Portfolio', path: '/portfolio' },
+    { label: 'Skills', path: '/skills' },
+    { label: 'Services', path: '/services' },
+    { label: 'Contact', path: '/contact' }
   ];
 
   return (
     <div className="bg-black text-white min-h-screen">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800/50">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800/50">
+        <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex justify-between items-center">
-            <Link to="/" className="text-2xl font-bold tracking-tight animate-slide-in-left">
+            {/* Logo */}
+            <Link to="/" className="text-2xl font-light tracking-widest">
               GLCL
             </Link>
-            <div className="hidden md:flex space-x-8">
-              {navigationItems.map(({ id, label, icon: Icon, path }, index) => (
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-12">
+              {navigationItems.map(({ label, path }) => (
                 <Link
-                  key={id}
+                  key={path}
                   to={path}
-                  className={`flex items-center space-x-2 transition-all duration-300 hover:text-emerald-400 transform hover:scale-105 ${
-                    currentPath === path ? 'text-emerald-400 border-b-2 border-emerald-400 pb-1' : 'text-gray-300'
+                  className={`font-light tracking-wide transition-all duration-300 hover:text-white ${
+                    currentPath === path 
+                      ? 'text-white border-b border-white pb-1' 
+                      : 'text-gray-400 hover:text-white'
                   }`}
-                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <Icon size={16} />
-                  <span className="font-medium">{label}</span>
+                  {label}
                 </Link>
               ))}
             </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
+
+          {/* Mobile Navigation */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden mt-6 pb-6 border-t border-gray-800">
+              <div className="flex flex-col space-y-4 mt-6">
+                {navigationItems.map(({ label, path }) => (
+                  <Link
+                    key={path}
+                    to={path}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`font-light tracking-wide transition-all duration-300 ${
+                      currentPath === path 
+                        ? 'text-white' 
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -50,10 +84,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </div>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-gray-800/50 bg-black">
+      <footer className="py-12 px-6 border-t border-gray-800/50 bg-black">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="text-gray-400">
-            © 2024 Lingampalli Gayathri Lakshmi Chandrakala. All rights reserved.
+          <p className="text-gray-500 font-light tracking-wide">
+            © 2024 Lingampalli Gayathri Lakshmi Chandrakala. Crafted with passion.
           </p>
         </div>
       </footer>

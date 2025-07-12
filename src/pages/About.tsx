@@ -1,60 +1,122 @@
 
-import { Brain, Code, Target, User } from "lucide-react";
+import { GraduationCap, Award, Book, Video, Code2 } from "lucide-react";
 
 const About = () => {
   return (
-    <div className="bg-gradient-to-b from-black to-gray-900 text-white min-h-screen py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-5xl font-bold mb-16 text-center animate-fade-in-up">
-          About <span className="text-emerald-400">Me</span>
+    <div className="bg-black text-white min-h-screen py-24 px-6">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl md:text-6xl font-light mb-16 text-center tracking-wide animate-fade-in-up">
+          About Me
         </h2>
-        <div className="grid md:grid-cols-2 gap-16">
-          <div className="space-y-8 animate-fade-in-left">
-            <div className="bg-gray-800/50 p-8 rounded-xl border border-gray-700/50 hover:border-emerald-400/30 transition-all duration-300 transform hover:scale-105">
-              <h3 className="text-2xl font-semibold mb-4 text-emerald-400">Educational Background</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Currently pursuing B.Tech in Computer Science with specialization in Artificial Intelligence 
-                and Machine Learning. I am in my 3rd year and have maintained strong academic performance 
-                while actively engaging in various technology projects and research initiatives.
-              </p>
-            </div>
-            
-            <div className="bg-gray-800/50 p-8 rounded-xl border border-gray-700/50 hover:border-emerald-400/30 transition-all duration-300 transform hover:scale-105">
-              <h3 className="text-2xl font-semibold mb-4 text-emerald-400">Career Aspirations</h3>
-              <p className="text-gray-300 leading-relaxed">
-                My ultimate goal is to become an IAS officer and contribute to public service and governance. 
-                I believe that my technical background in AI/ML will provide a unique perspective in addressing 
-                modern administrative challenges and implementing technology-driven solutions for societal development.
-              </p>
+        
+        <div className="grid md:grid-cols-2 gap-16 mb-20">
+          {/* Left Column - Quote/Image */}
+          <div className="animate-fade-in-left">
+            <div className="bg-gradient-to-br from-gray-900/50 to-black p-12 border border-gray-800 h-full flex items-center justify-center">
+              <blockquote className="text-2xl md:text-3xl font-light italic text-center leading-relaxed">
+                "Technology is not just my passion, it's my pathway to serving society"
+              </blockquote>
             </div>
           </div>
           
-          <div className="space-y-8 animate-fade-in-right">
-            <div className="bg-gray-800/50 p-8 rounded-xl border border-gray-700/50 hover:border-emerald-400/30 transition-all duration-300 transform hover:scale-105">
-              <h3 className="text-2xl font-semibold mb-6 text-emerald-400">Interests & Passions</h3>
-              <ul className="space-y-4 text-gray-300">
-                {[
-                  { icon: Brain, text: 'Artificial Intelligence and Machine Learning research' },
-                  { icon: Code, text: 'Web development and creating user-friendly applications' },
-                  { icon: Target, text: 'Public policy and governance studies' },
-                  { icon: User, text: 'Community service and social impact initiatives' }
-                ].map(({ icon: Icon, text }, index) => (
-                  <li key={index} className="flex items-start group hover:text-emerald-400 transition-colors duration-300">
-                    <Icon className="w-5 h-5 mt-1 mr-4 text-emerald-400 group-hover:scale-110 transition-transform duration-300" />
-                    <span>{text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div className="bg-gray-800/50 p-8 rounded-xl border border-gray-700/50 hover:border-emerald-400/30 transition-all duration-300 transform hover:scale-105">
-              <h3 className="text-2xl font-semibold mb-4 text-emerald-400">Certifications</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Continuously expanding knowledge through various online courses and certifications 
-                in AI/ML, web development, and related technologies. Always eager to learn and 
-                adapt to emerging technological trends.
+          {/* Right Column - Bio */}
+          <div className="animate-fade-in-right space-y-8">
+            <div>
+              <h3 className="text-2xl font-light mb-6 tracking-wide">Personal Journey</h3>
+              <p className="text-gray-300 leading-relaxed text-lg">
+                I'm a passionate B.Tech student specializing in Artificial Intelligence and Machine Learning, 
+                with a unique vision of combining technology with public service. My ultimate goal is to become 
+                an IAS officer, bringing innovative solutions to governance and administration.
               </p>
             </div>
+            
+            <div>
+              <h3 className="text-2xl font-light mb-6 tracking-wide">Vision</h3>
+              <p className="text-gray-300 leading-relaxed text-lg">
+                I believe that the future of governance lies in the intelligent application of technology. 
+                My journey in AI/ML is not just about coding—it's about understanding how technology can 
+                transform lives and serve the greater good.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Educational Timeline */}
+        <div className="mb-20 animate-fade-in-up">
+          <h3 className="text-3xl font-light mb-12 text-center tracking-wide">Educational Timeline</h3>
+          <div className="space-y-8">
+            {[
+              {
+                period: "2023 - 2027",
+                title: "B.Tech in Computer Science (AI/ML)",
+                institution: "Sri Vasavi Engineering College",
+                grade: "CGPA: 7.6",
+                icon: GraduationCap
+              },
+              {
+                period: "2021 - 2023",
+                title: "Intermediate Education",
+                institution: "Sri Chaitanya Junior College",
+                grade: "93%",
+                icon: Book
+              },
+              {
+                period: "2021",
+                title: "Secondary School Certificate",
+                institution: "Sri Chaitanya School",
+                grade: "586/600",
+                icon: Award
+              }
+            ].map((item, index) => (
+              <div key={index} className="flex items-start space-x-6 p-6 border-l-2 border-gray-800 hover:border-white/20 transition-colors duration-300">
+                <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <item.icon className="w-6 h-6 text-white" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                    <h4 className="text-xl font-light">{item.title}</h4>
+                    <span className="text-gray-400 text-sm">{item.period}</span>
+                  </div>
+                  <p className="text-gray-300 mb-1">{item.institution}</p>
+                  <p className="text-gray-400">{item.grade}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Certifications */}
+        <div className="mb-20 animate-fade-in-up">
+          <h3 className="text-3xl font-light mb-12 text-center tracking-wide">Certifications</h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              "Web Development with Live Projects (Ajjhub, Sapienz)",
+              "Introduction to Prompt Engineering (Simplilearn)"
+            ].map((cert, index) => (
+              <div key={index} className="p-6 border border-gray-800 bg-gradient-to-br from-gray-900/30 to-black hover:border-white/20 transition-colors duration-300">
+                <p className="text-gray-300 text-lg">{cert}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Interests */}
+        <div className="animate-fade-in-up">
+          <h3 className="text-3xl font-light mb-12 text-center tracking-wide">Interests & Passions</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { icon: Book, title: "Reading", desc: "Tech & self-help books" },
+              { icon: Video, title: "Learning", desc: "Motivational videos" },
+              { icon: Code2, title: "Coding", desc: "Small projects & experiments" }
+            ].map((interest, index) => (
+              <div key={index} className="text-center p-8 border border-gray-800 bg-gradient-to-br from-gray-900/30 to-black hover:border-white/20 transition-all duration-300 hover:scale-105">
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <interest.icon className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-xl font-light mb-3">{interest.title}</h4>
+                <p className="text-gray-400">{interest.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
