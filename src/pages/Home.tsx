@@ -11,28 +11,31 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="bg-black text-white min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
+    <div className="bg-background text-foreground min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
       {/* Subtle moving gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900/20 to-black opacity-50 animate-gradient-x"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-platinum-950/10 to-background opacity-50 animate-gradient-x"></div>
       
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+      <div className="max-w-5xl mx-auto text-center relative z-10">
         <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {/* Profile Image */}
-          <div className="animate-fade-in-up mb-12" style={{ animationDelay: '0.2s' }}>
-            <img
-              src="https://i.postimg.cc/pdwkSWQS/ammu.jpg"
-              alt="Gayathri Lakshmi Chandrakala"
-              className="w-48 h-48 rounded-full mx-auto border-2 border-white/20 object-cover shadow-2xl transform hover:scale-105 transition-transform duration-500"
-            />
+          <div className="animate-fade-in-up mb-16" style={{ animationDelay: '0.2s' }}>
+            <div className="relative inline-block">
+              <img
+                src="https://i.postimg.cc/pdwkSWQS/ammu.jpg"
+                alt="Gayathri Lakshmi Chandrakala"
+                className="w-56 h-56 rounded-full mx-auto border-2 border-electric-500/20 object-cover shadow-2xl transform hover:scale-105 transition-all duration-700 card-glow"
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-electric-500/5 to-transparent"></div>
+            </div>
           </div>
           
           {/* Main Headline */}
-          <div className="animate-fade-in-up mb-8" style={{ animationDelay: '0.5s' }}>
-            <h1 className="text-5xl md:text-7xl font-light mb-6 leading-tight tracking-wide">
-              Hi, I'm <span className="font-normal">Gayathri</span>
+          <div className="animate-fade-in-up mb-12" style={{ animationDelay: '0.5s' }}>
+            <h1 className="text-5xl md:text-8xl font-display font-light mb-8 leading-tight tracking-wide">
+              Hi, I'm <span className="font-medium text-gradient glow-text">Gayathri</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 font-light tracking-wide leading-relaxed max-w-3xl mx-auto">
-              An AI/ML enthusiast, aspiring IAS officer, and web developer
+            <p className="text-xl md:text-3xl text-platinum-300 font-light tracking-wide leading-relaxed max-w-4xl mx-auto">
+              An <span className="text-electric-400 font-medium">AI/ML enthusiast</span>, aspiring <span className="text-electric-400 font-medium">IAS officer</span>, and <span className="text-electric-400 font-medium">web developer</span>
             </p>
           </div>
           
@@ -40,7 +43,7 @@ const Home = () => {
           <div className="animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
             <Button 
               asChild
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black px-12 py-4 text-lg font-light tracking-wide rounded-none transform hover:scale-105 transition-all duration-300"
+              className="bg-transparent border-2 border-electric-500/50 text-white hover:bg-electric-500/10 hover:border-electric-400 hover:text-electric-300 px-16 py-6 text-xl font-light tracking-widest rounded-lg transform hover:scale-105 transition-all duration-500 border-glow hover:glow-text"
             >
               <Link to="/portfolio">Explore My Work</Link>
             </Button>

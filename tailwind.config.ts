@@ -19,6 +19,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+				'display': ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+				'mono': ['JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -62,12 +67,53 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				'electric': {
+					'50': 'hsl(186, 100%, 97%)',
+					'100': 'hsl(185, 96%, 90%)',
+					'200': 'hsl(186, 94%, 80%)',
+					'300': 'hsl(187, 92%, 69%)',
+					'400': 'hsl(188, 86%, 53%)',
+					'500': 'hsl(189, 94%, 43%)',
+					'600': 'hsl(192, 91%, 36%)',
+					'700': 'hsl(193, 82%, 31%)',
+					'800': 'hsl(194, 70%, 27%)',
+					'900': 'hsl(196, 64%, 24%)',
+					'950': 'hsl(197, 79%, 15%)'
+				},
+				'platinum': {
+					'50': 'hsl(210, 20%, 98%)',
+					'100': 'hsl(220, 14%, 96%)',
+					'200': 'hsl(220, 13%, 91%)',
+					'300': 'hsl(216, 12%, 84%)',
+					'400': 'hsl(218, 11%, 65%)',
+					'500': 'hsl(220, 9%, 46%)',
+					'600': 'hsl(215, 14%, 34%)',
+					'700': 'hsl(217, 19%, 27%)',
+					'800': 'hsl(215, 28%, 17%)',
+					'900': 'hsl(221, 39%, 11%)',
+					'950': 'hsl(224, 71%, 4%)'
 				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			fontSize: {
+				'xs': ['0.75rem', { lineHeight: '1rem' }],
+				'sm': ['0.875rem', { lineHeight: '1.25rem' }],
+				'base': ['1rem', { lineHeight: '1.5rem', letterSpacing: '0.01em' }],
+				'lg': ['1.125rem', { lineHeight: '1.75rem', letterSpacing: '0.01em' }],
+				'xl': ['1.25rem', { lineHeight: '1.75rem', letterSpacing: '0.01em' }],
+				'2xl': ['1.5rem', { lineHeight: '2rem', letterSpacing: '0.02em' }],
+				'3xl': ['1.875rem', { lineHeight: '2.25rem', letterSpacing: '0.02em' }],
+				'4xl': ['2.25rem', { lineHeight: '2.5rem', letterSpacing: '0.02em' }],
+				'5xl': ['3rem', { lineHeight: '1', letterSpacing: '0.02em' }],
+				'6xl': ['3.75rem', { lineHeight: '1', letterSpacing: '0.02em' }],
+				'7xl': ['4.5rem', { lineHeight: '1', letterSpacing: '0.02em' }],
+				'8xl': ['6rem', { lineHeight: '1', letterSpacing: '0.02em' }],
+				'9xl': ['8rem', { lineHeight: '1', letterSpacing: '0.02em' }]
 			},
 			keyframes: {
 				'accordion-down': {

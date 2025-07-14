@@ -18,13 +18,13 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   ];
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-background text-foreground min-h-screen">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800/50">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-platinum-800/50">
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link to="/" className="text-2xl font-light tracking-widest">
+            <Link to="/" className="text-2xl font-display font-semibold tracking-widest text-gradient glow-text">
               GLCL
             </Link>
             
@@ -34,10 +34,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <Link
                   key={path}
                   to={path}
-                  className={`font-light tracking-wide transition-all duration-300 hover:text-white ${
+                  className={`font-medium tracking-wide transition-all duration-300 text-lg ${
                     currentPath === path 
-                      ? 'text-white border-b border-white pb-1' 
-                      : 'text-gray-400 hover:text-white'
+                      ? 'text-electric-400 border-b-2 border-electric-400 pb-1 glow-text' 
+                      : 'text-platinum-300 hover:text-electric-300 hover:glow-text'
                   }`}
                 >
                   {label}
@@ -47,26 +47,26 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden"
+              className="md:hidden text-electric-400"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
 
           {/* Mobile Navigation */}
           {isMobileMenuOpen && (
-            <div className="md:hidden mt-6 pb-6 border-t border-gray-800">
-              <div className="flex flex-col space-y-4 mt-6">
+            <div className="md:hidden mt-6 pb-6 border-t border-platinum-800/50">
+              <div className="flex flex-col space-y-6 mt-6">
                 {navigationItems.map(({ label, path }) => (
                   <Link
                     key={path}
                     to={path}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`font-light tracking-wide transition-all duration-300 ${
+                    className={`font-medium tracking-wide transition-all duration-300 text-lg ${
                       currentPath === path 
-                        ? 'text-white' 
-                        : 'text-gray-400 hover:text-white'
+                        ? 'text-electric-400 glow-text' 
+                        : 'text-platinum-300 hover:text-electric-300'
                     }`}
                   >
                     {label}
@@ -84,10 +84,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </div>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-gray-800/50 bg-black">
+      <footer className="py-16 px-6 border-t border-platinum-800/50 bg-background">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="text-gray-500 font-light tracking-wide">
-            © 2024 Lingampalli Gayathri Lakshmi Chandrakala. Crafted with passion.
+          <p className="text-platinum-400 font-light tracking-wide text-lg">
+            © 2024 <span className="text-electric-400 font-medium">Lingampalli Gayathri Lakshmi Chandrakala</span>. Crafted with passion.
           </p>
         </div>
       </footer>
