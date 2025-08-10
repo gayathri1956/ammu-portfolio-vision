@@ -1,9 +1,6 @@
-
 import { ExternalLink, Clock } from "lucide-react";
-
 const Portfolio = () => {
-  return (
-    <div className="bg-background text-foreground min-h-screen py-24 px-6">
+  return <div className="bg-background text-foreground min-h-screen py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-6xl font-display font-light mb-16 text-center tracking-wide animate-fade-in-up text-gradient">
           What I'm Working On
@@ -12,8 +9,8 @@ const Portfolio = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Kids Learning App */}
           <div className="group animate-fade-in-up bg-gradient-to-br from-platinum-900/50 to-background border border-platinum-800 p-8 hover:border-electric-400/20 transition-all duration-500 hover:scale-105 hover:glow-electric" style={{
-            animationDelay: '0.2s'
-          }}>
+          animationDelay: '0.2s'
+        }}>
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-display font-light text-electric-300">Kids Learning App</h3>
               <div className="flex items-center text-amber-400">
@@ -27,16 +24,7 @@ const Portfolio = () => {
               Combines interactive learning with modern AI technologies to create engaging educational experiences.
             </p>
             
-            <div className="mb-6">
-              <h4 className="text-sm uppercase tracking-wide text-platinum-400 mb-3">Technologies</h4>
-              <div className="flex flex-wrap gap-2">
-                {['Web Development', 'Suno AI', 'Polo AI'].map(tech => (
-                  <span key={tech} className="px-3 py-1 bg-electric-400/10 text-electric-300 text-sm rounded-full border border-electric-400/20">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
+            
             
             <button className="w-full py-3 border border-platinum-600 text-platinum-400 hover:border-electric-400 hover:text-electric-300 transition-all duration-300 cursor-not-allowed">
               <ExternalLink className="w-4 h-4 inline mr-2" />
@@ -46,8 +34,8 @@ const Portfolio = () => {
           
           {/* Portfolio Website */}
           <div className="group animate-fade-in-up bg-gradient-to-br from-platinum-900/50 to-background border border-platinum-800 p-8 hover:border-electric-400/20 transition-all duration-500 hover:scale-105 hover:glow-electric" style={{
-            animationDelay: '0.4s'
-          }}>
+          animationDelay: '0.4s'
+        }}>
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-display font-light text-electric-300">Portfolio Website</h3>
               <div className="w-3 h-3 bg-green-400 rounded-full glow-green"></div>
@@ -59,13 +47,9 @@ const Portfolio = () => {
             </p>
             
             <div className="mb-6">
-              <h4 className="text-sm uppercase tracking-wide text-platinum-400 mb-3">Technologies</h4>
+              
               <div className="flex flex-wrap gap-2">
-                {['React', 'TypeScript', 'Tailwind CSS'].map(tech => (
-                  <span key={tech} className="px-3 py-1 bg-electric-400/10 text-electric-300 text-sm rounded-full border border-electric-400/20">
-                    {tech}
-                  </span>
-                ))}
+                {['React', 'TypeScript', 'Tailwind CSS'].map(tech => {})}
               </div>
             </div>
             
@@ -77,8 +61,8 @@ const Portfolio = () => {
           
           {/* Future Projects Placeholder */}
           <div className="group animate-fade-in-up bg-gradient-to-br from-platinum-900/30 to-background border border-platinum-700 border-dashed p-8 text-center hover:glow-electric" style={{
-            animationDelay: '0.6s'
-          }}>
+          animationDelay: '0.6s'
+        }}>
             <div className="text-6xl mb-6 opacity-20 text-electric-400">+</div>
             <h3 className="text-xl font-display font-light text-platinum-400 mb-4">More Projects Coming Soon</h3>
             <p className="text-platinum-500 text-sm">
@@ -87,8 +71,6 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Portfolio;
