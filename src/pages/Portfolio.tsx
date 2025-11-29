@@ -47,9 +47,12 @@ const Portfolio = () => {
             </p>
             
             <div className="mb-6">
-              
               <div className="flex flex-wrap gap-2">
-                {['React', 'TypeScript', 'Tailwind CSS'].map(tech => {})}
+                {['React', 'TypeScript', 'Tailwind CSS'].map((tech, i) => (
+                  <span key={i} className="px-4 py-2 bg-electric-500/10 text-electric-300 text-sm border border-electric-500/20 rounded-md">
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
             

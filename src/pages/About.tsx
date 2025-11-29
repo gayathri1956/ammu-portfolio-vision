@@ -25,8 +25,8 @@ const About = () => {
               <h3 className="text-3xl font-display font-medium mb-8 tracking-wide text-electric-400 glow-text">Personal Journey</h3>
               <p className="text-platinum-300 leading-relaxed text-xl font-light">
                 I'm a passionate B.Tech student specializing in <span className="text-electric-400 font-medium">Artificial Intelligence and Machine Learning</span>, 
-                with a unique vision of combining technology with public service. My ultimate goal is to become 
-                an <span className="text-electric-400 font-medium">IAS officer</span>, bringing innovative solutions to governance and administration.
+                with a unique vision of combining technology with public service. My ultimate aspiration is to serve at the 
+                <span className="text-electric-400 font-medium"> highest levels of administration</span>, bringing innovative technological solutions to governance and societal challenges.
               </p>
             </div>
             
@@ -90,8 +90,11 @@ const About = () => {
           <h3 className="text-4xl font-display font-medium mb-16 text-center tracking-wide text-gradient glow-text">Certifications</h3>
           <div className="grid md:grid-cols-2 gap-10">
             {[
-              "Web Development with Live Projects (Ajjhub, Sapienz)",
-              "Introduction to Prompt Engineering (Simplilearn)"
+              "Web Development Course with Live Projects (Ajjhub and Sapienz Recruit)",
+              "MS Office (Stepping Stones)",
+              "Introduction to C (Stepping Stones)",
+              "Introduction to Prompt Engineering (Simplilearn)",
+              "Introduction to Internet of Things (NPTEL Online Certification)"
             ].map((cert, index) => (
               <div key={index} className="p-8 border border-platinum-800/50 bg-gradient-to-br from-platinum-900/20 to-background hover:border-electric-500/30 transition-all duration-500 rounded-xl card-glow">
                 <p className="text-platinum-200 text-xl font-light leading-relaxed">{cert}</p>
