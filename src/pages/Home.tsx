@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import profileImage from "@/assets/profile.jpg";
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
@@ -17,7 +18,7 @@ const Home = () => {
           animationDelay: '0.2s'
         }}>
             <div className="relative inline-block">
-              <img src="https://i.postimg.cc/pdwkSWQS/ammu.jpg" alt="Gayathri Lakshmi Chandrakala" className="w-56 h-56 rounded-full mx-auto border-2 border-electric-500/20 object-cover shadow-2xl transform hover:scale-105 transition-all duration-700 card-glow" />
+              <img src={profileImage} alt="Gayathri Lakshmi Chandrakala" className="w-56 h-56 rounded-full mx-auto border-2 border-electric-500/20 object-cover shadow-2xl transform hover:scale-105 transition-all duration-700 card-glow" />
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-electric-500/5 to-transparent"></div>
             </div>
           </div>

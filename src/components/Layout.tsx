@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github, Linkedin } from "lucide-react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
@@ -13,7 +13,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     { label: 'About', path: '/about' },
     { label: 'Portfolio', path: '/portfolio' },
     { label: 'Skills', path: '/skills' },
-    { label: 'Services', path: '/services' },
     { label: 'Contact', path: '/contact' }
   ];
 
@@ -29,7 +28,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </Link>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-12">
+            <div className="hidden md:flex items-center space-x-12">
               {navigationItems.map(({ label, path }) => (
                 <Link
                   key={path}
@@ -43,6 +42,28 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   {label}
                 </Link>
               ))}
+              
+              {/* Social Links */}
+              <div className="flex items-center space-x-4 ml-4 pl-4 border-l border-platinum-700">
+                <a 
+                  href="https://github.com/gayathri1956" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-platinum-300 hover:text-electric-300 hover:glow-text transition-all duration-300"
+                  aria-label="GitHub"
+                >
+                  <Github size={22} />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/lingampalli-gayathri-lakshmi-chandrakala-0186b0320/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-platinum-300 hover:text-electric-300 hover:glow-text transition-all duration-300"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={22} />
+                </a>
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -72,6 +93,28 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     {label}
                   </Link>
                 ))}
+                
+                {/* Social Links Mobile */}
+                <div className="flex items-center space-x-6 pt-4 border-t border-platinum-700">
+                  <a 
+                    href="https://github.com/gayathri1956" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-platinum-300 hover:text-electric-300 transition-all duration-300"
+                    aria-label="GitHub"
+                  >
+                    <Github size={24} />
+                  </a>
+                  <a 
+                    href="https://www.linkedin.com/in/lingampalli-gayathri-lakshmi-chandrakala-0186b0320/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-platinum-300 hover:text-electric-300 transition-all duration-300"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin size={24} />
+                  </a>
+                </div>
               </div>
             </div>
           )}
