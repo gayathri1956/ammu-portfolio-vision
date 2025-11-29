@@ -33,18 +33,20 @@ const Contact = () => {
                   icon: Linkedin, 
                   label: 'LinkedIn', 
                   value: 'Connect with me',
-                  href: '#'
+                  href: 'https://www.linkedin.com/in/lingampalli-gayathri-lakshmi-chandrakala-0186b0320/'
                 },
                 { 
                   icon: Github, 
                   label: 'GitHub', 
                   value: 'View my code',
-                  href: '#'
+                  href: 'https://github.com/gayathri1956'
                 }
               ].map((contact, index) => (
                 <a 
                   key={index} 
                   href={contact.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center p-6 border border-gray-800 bg-gradient-to-br from-gray-900/30 to-black hover:border-white/20 transition-all duration-300 hover:scale-105 group"
                 >
                   <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-6 group-hover:bg-white/20 transition-colors duration-300">
